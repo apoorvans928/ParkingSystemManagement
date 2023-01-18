@@ -49,9 +49,9 @@ public class ParkingServiceImpl implements ParkingService{
 			return new ResponseEntity<>("Please enter valid size from the list (small,large,medium,x-large)",HttpStatus.BAD_REQUEST);
 		}
 		allocatedList=parkingDaoImpl.validateIsSlotFree();
-		for(int floor=1;floor<=3;floor++) {
+		 for(int s=sizeList.indexOf(size.toLowerCase()); s<sizeList.size();s++){
 			if(flag==false) {
-				for(int s=sizeList.indexOf(size.toLowerCase()); s<sizeList.size();s++) {
+				for(int floor=1;floor<=3;floor++){
 					if(flag==false) {
 						for(int bay=1;bay<=100;bay++) {
 							slot=floor+"F:"+bay+"B"+size.toUpperCase().charAt(0);
